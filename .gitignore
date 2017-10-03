@@ -1,0 +1,7 @@
+# ignore file for HSO project
+
+*.swp
+ref/
+.build/
+__pycache__/
+.ycm_extra_conf.py*
