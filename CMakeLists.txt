@@ -11,7 +11,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 
 include_directories("eigen3.3/include/eigen3/")
 
-set(SRC hso.cpp)
+set(SRC hso.cpp Obj.cpp util.cpp)
 set(EXE hypervolume)
 add_executable(${EXE} ${SRC})
 
