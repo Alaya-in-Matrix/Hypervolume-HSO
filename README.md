@@ -32,3 +32,8 @@ The input file looks like this:
 ```
 
 and `0 0 0` would be the reference point.
+
+## Reference
+
+- Bradstreet, Lucas. The hypervolume indicator for multi-objective optimisation: calculation and use. University of Western Australia, 2011.
+- [A Simple Recursive Algorithm for calculating Expected Hypervolume Improvement](https://bayesopt.github.io/accepted.html)
