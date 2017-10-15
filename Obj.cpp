@@ -96,3 +96,27 @@ double ParetoFronts::hypervolume() const
 {
     return hypervolume(_pf, _nadir);
 }
+
+pair<MatrixXd, MatrixXd> ParetoFronts::partition(const MatrixXd& pnts) const
+{
+    const size_t num_obj = pnts.rows();
+    const size_t num_pnt = pnts.cols();
+    if(num_obj == 1)
+    {
+        // if there is more than one points, they must be identical
+        if(num_pnt != 1)
+        {
+            for(size_t i = 1; i < num_pnt; ++i)
+            {
+                if(pnts(i) != pnts(0))
+                {
+                    cerr << "error pnts:\n" << pnts << endl;
+                    exit(EXIT_FAILURE);
+                }
+            }
+        }
+    }
+    else
+    {
+    }
+}
