@@ -5,10 +5,15 @@
 using namespace std;
 using namespace Eigen;
 
-bool operator<=(const VectorXd& v1, const VectorXd& v2) { return (v1.array() <= v2.array()).all(); }
+bool operator<=(const VectorXd& v1, const VectorXd& v2) 
+{
+    assert(v1.size() == v2.size());
+    return (v1.array() <= v2.array()).all(); 
+}
 bool operator<(const VectorXd& v1, const VectorXd& v2)
 {
-    return (v1.array() <= v2.array()).all() && (v1.array() < v2.array()).any();
+    assert(v1.size() == v2.size());
+    return (v1.array() <= v2.array()).all() and v1 != v2;
 }
 
 ParetoFronts::ParetoFronts(const MatrixXd& pnts) 
