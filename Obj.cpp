@@ -65,16 +65,7 @@ double ParetoFronts::hypervolume(const MatrixXd& pnts, const VectorXd& ref) cons
     if(num_obj == 1)
     {
         if(num_pnt != 1)
-        {
-            for(size_t i = 1; i < num_pnt; ++i)
-            {
-                if(pnts(i) != pnts(0))
-                {
-                    cerr << "error pnts:\n" << pnts << endl;
-                    exit(EXIT_FAILURE);
-                }
-            }
-        }
+            assert(pnts.cwiseEqual(pnts(0)).all());
         return ref(0) - pnts(0, 0);
     }
     else
